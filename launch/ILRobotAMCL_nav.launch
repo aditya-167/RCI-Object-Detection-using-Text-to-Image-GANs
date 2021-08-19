@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<launch>
+
+        <arg name="rviz_config" default="-d $(find ILRobot)/rviz/amcl_ILRobot.rviz" />
+  <include file="$(find ILRobot)/launch/ILRobot_fetch_env.launch">
+    <arg name="rviz_config" value="$(arg rviz_config)" />
+  </include>
+
+  <!-- Map server -->
+  <arg name="map_file" default="$(find ILRobot)/map/myMap.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+      args="0 0 0 0 0 0 map odom 100"/>
+
+  <!-- Localization-->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+
+    <remap from="scan" to="/ILRobot/laser/scan"/>
+  
+
+
+    <param name="min_particles" value="50"/>
+    <param name="max_particles" value="2000"/>
+    <param name="update_min_d"              value="0.3"/>
+    <param name="update_min_a"              value="0.6"/>
+
+    <param name="odom_model_type"           value="diff-corrected"/>
+    <param name="odom_frame_id"             value="odom"/>
+    <param name="base_frame_id"             value="base_link"/>
+
+<param name="transform_tolerance" value="0.7"/>
+    
+    <param name="odom_alpha1" value="0.05"/>
+    <param name="odom_alpha2" value="0.05"/>
+    <param name="odom_alpha3" value="0.01"/>
+    <param name="odom_alpha4" value="0.05"/>
+
+    <param name="odom_alpha4" value="0.03"/>
+
+    <param name="laser_max_beams" value="90"/>
+    <param name="laser_z_rand" value="0.05"/>
+    <param name="laser_z_hit" value="0.95"/>
+
+    <param name="intital_pose_x" value="-2.57351398468"/>
+    <param name="intital_pose_y" value="8.07865142822"/>
+    
+  </node>
+
+  <!-- Move base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find ILRobot)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find ILRobot)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find ILRobot)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find ILRobot)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find ILRobot)/config/trajectory_planner.yaml" command="load" />
+
+    <remap from="cmd_vel" to="cmd_vel"/>
+    <remap from="odom" to="odom"/>
+    <remap from="scan" to="/ILRobot/laser/scan"/>
+
+    <param name="base_global_planner" type="string" value="navfn/NavfnROS" />
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+
+    <param name="move_base/DWAPlannerROS/yaw_goal_tolerance" value="1"/>
+    <param name="move_base/DWAPlannerROS/xy_goal_tolerance" value="1"/>
+  </node>
+
+
+</launch>

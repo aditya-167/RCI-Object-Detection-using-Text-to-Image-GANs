@@ -1,0 +1,4 @@
+welcome: Welcome, This is a simple fetching robot command to evaluate one of my abilities. How do I call you?
+hello: Hello, {{ firstname }} what do you want?
+fetch_sentence: Hello! getting you {{ object }} from {{ location }}
+unauthorized: Hello, I dont know you!

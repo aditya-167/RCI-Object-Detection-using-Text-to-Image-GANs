@@ -1,0 +1,3 @@
+welcome: Welcome, This is a simple test code to evaluate one of my abilities. How do I call you?
+hello: Hello, {{ firstname }}
+

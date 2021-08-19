@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<launch>
+
+  <param name="/use_sim_time" value="true"/>
+        <include file="$(find ILRobot)/launch/ILRobot_fetch_env.launch"></include>
+        
+       <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen" clear_params="true">
+    
+    <param name ="base_frame" value="base_link" />
+    <param name ="odom_frame" value="odom" /> 
+    <param name="delta" value="0.01"/>
+    <remap from="scan" to="/ILRobot/laser/scan"/>
+
+    <param name="xmin" value="-20"/>
+    <param name="xmax" value="20"/>
+    <param name="ymin" value="-20"/>
+    <param name="ymax" value="20"/>
+
+    <param name="linearUpdate" value="0.5"/>
+    <param name="angularUpdate" value="0.436"/>
+    <param name="temporalUpdate" value="-1.0"/>
+    <param name="resampleThreshold" value="0.5"/>
+    <param name="particles" value="80"/>
+  </node>
+
+</launch>

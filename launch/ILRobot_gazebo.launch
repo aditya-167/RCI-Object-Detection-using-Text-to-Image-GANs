@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+ <param name="robot_description" textfile="$(find ILRobot)/urdf/ILRobotDescription.urdf"/>
+ <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-param robot_description -urdf -model ILRobotDescription -x 0 -y 0"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen"/>
+</launch>

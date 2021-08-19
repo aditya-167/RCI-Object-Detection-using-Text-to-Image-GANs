@@ -1,0 +1,18 @@
+
+ 
+map_type: costmap
+
+obstacle_range: 3.0 # 2.0
+raytrace_range: 6.0 # 3.0
+
+transform_tolerance: 1 # 0.0
+subscribe_to_updates: true
+
+
+robot_radius: 0.2 # 0.0
+inflation_radius: 0.75
+cost_scaling_factor: 10.0
+
+observation_sources: laser_scan_sensor
+
+laser_scan_sensor: {sensor_frame: lidar2D, data_type: LaserScan, topic: /ILRobot/laser/scan, marking: true, clearing: true}

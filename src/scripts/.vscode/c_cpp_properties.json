@@ -1,0 +1,19 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/aditya/Capstone/ImaginationLearning/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/aditya/Capstone/ImaginationLearning/src/vision_opencv/cv_bridge/include/**",
+        "/home/aditya/Capstone/ImaginationLearning/src/vision_opencv/image_geometry/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
