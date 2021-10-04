@@ -20,10 +20,10 @@ Demonstration of RCI, an imaginative approach object detection, for service-robo
 
 * `Detecting banana based on user's speech .... "Get me a banana from living-room"!`
 
-### 1. Convert speech to text using using Deep NLP model
-### 2. Using proposed GANs method, convert text to image (Imaingation/image representation of words)
-### 3. NLP to understand location, and fetch object, since robot has the map of the environment (SLAM).
-### 4. Detect object based on imagined image with real object in environemnt using (DIS) Deep Image Similarity.
+##### 1. Convert speech to text using using Deep NLP model
+##### 2. Using proposed GANs method, convert text to image (Imaingation/image representation of words)
+##### 3. NLP to understand location, and fetch object, since robot has the map of the environment (SLAM).
+##### 4. Detect object based on imagined image with real object in environemnt using (DIS) Deep Image Similarity.
 
 ## Result
 ![](Demo/results.png)
