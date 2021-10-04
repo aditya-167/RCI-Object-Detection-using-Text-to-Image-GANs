@@ -4,22 +4,26 @@ Demonstration of RCI, an imaginative approach object detection, for service-robo
 
 ## Demonstration
 
-1. Environment with fruits and objects placed in "living room", "bed-room","kitchen" and "Drawing-room"
+* Environment with fruits and objects placed in "living room", "bed-room","kitchen" and "Drawing-room"
 
-![](Demo/map.png)
+![](Demo/environment.png)
 
-1. User commands robot to get "Banana from living room".
+* User commands robot to get "Banana from living room".
 
-2. robot understands banana fruit word through NLP and generates an image representation of banana through text to image GANs using attention mechanism.
+* robot understands banana fruit word through NLP and generates an image representation of banana through text to image GANs using attention mechanism.
 
 ![](Demo/architecture.png)
 
 `proposed TI-GAN architecture`
 
-
-3. Detect and fetch the object based from the goal location 
-
 ![](Demo/demo.gif)
+
+* `Detecting banana based on user's speech .... "Get me a banana from living-room"!`
+
+### 1. Convert speech to text using using Deep NLP model
+### 2. Using proposed GANs method, convert text to image (Imaingation/image representation of words)
+### 3. NLP to understand location, and fetch object, since robot has the map of the environment (SLAM).
+### 4. Detect object based on imagined image with real object in environemnt using (DIS) Deep Image Similarity.
 
 ## Result
 ![](Demo/results.png)
