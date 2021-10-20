@@ -4,7 +4,7 @@ Demonstration of RCI, an imaginative approach object detection, for service-robo
 
 ## Demonstration
 
-* Environment with fruits and objects placed in "living room", "bed-room","kitchen" and "Drawing-room"
+### `Environment with fruits and objects placed in "living room", "bed-room","kitchen" and "Drawing-room`
 
 ![](Demo/environment.png)
 
@@ -14,11 +14,11 @@ Demonstration of RCI, an imaginative approach object detection, for service-robo
 
 ![](Demo/architecture.png)
 
-`proposed TI-GAN architecture`
+### `proposed TI-GAN architecture`
 
 ![](Demo/demo.gif)
 
-* `Detecting banana based on user's speech .... "Get me a banana from living-room"!`
+### `Detecting banana based on user's speech .... "Get me a banana from living-room"!`
 
 ##### 1. Convert speech to text using using Deep NLP model
 ##### 2. Using proposed GANs method, convert text to image (Imaingation/image representation of words)
