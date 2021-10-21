@@ -12,21 +12,23 @@ Demonstration of RCI, an imaginative approach object detection, for service-robo
 
 * robot understands banana fruit word through NLP and generates an image representation of banana through text to image GANs using attention mechanism.
 
-![](Demo/architecture.png)
+
 
 ### `Workflow with example of robot fetching orange fruit from kitchen`
 
-![](Demo/Blocks.png)
+![](Demo/architecture.JPG)
 
 ### `Proposed Generator & Discriminator Residual blocks with attention module`
 
-![](Demo/overallPipeline.png)
+![](Demo/Blocks.png)
 
 ### `Proposed IL-GAN architecture`
 
-![](Demo/demo.gif)
+![](Demo/overallPipeline.JPG)
 
 ### `Detecting banana based on user's speech .... "Get me a banana from living-room"!`
+
+![](Demo/demo.gif)
 
 ##### 1. Convert speech to text using using Deep NLP model
 ##### 2. Using proposed GANs method, convert text to image (Imaingation/image representation of words)
