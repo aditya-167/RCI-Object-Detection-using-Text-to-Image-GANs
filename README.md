@@ -16,11 +16,11 @@ Demonstration of RCI, an imaginative approach object detection, for service-robo
 
 ### `Workflow with example of robot fetching orange fruit from kitchen`
 
-![](Demo/architecture.JPG)
+![](Demo/architecture.png)
 
 ### `Proposed Generator & Discriminator Residual blocks with attention module`
 
-![](Demo/Blocks.png)
+![](Demo/Blocks.JPG)
 
 ### `Proposed IL-GAN architecture`
 
